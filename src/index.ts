@@ -6,7 +6,7 @@ const Monitor = require('ping-monitor');
  
 keepAlive();
 const monitor = new Monitor({
-    website: 'LINK',
+    website: 'https://AlmibarHelper.xenox116.repl.co',
     title: 'Nombre',
     interval: 30 // minutes
 });
