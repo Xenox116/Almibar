@@ -25,9 +25,6 @@ export class ExtendedClient extends Discord.Client<true> {
 
 	public async start() {
 		await eventHandler(this);
-
-		let json = require('../../config.json');
-
-		await this.login(json.token);
+		await this.login();
 	}
 }
