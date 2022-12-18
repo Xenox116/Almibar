@@ -24,6 +24,12 @@ export default new EventBuilder('messageCreate').setCallback(
             return console.log(queue);
         }
 
+        if (command[0] === 'ping') {
+            if (command.length !== 1) return;
+
+            return console.log(client.ws.ping);
+        }
+
         if (command[0] === 'horario') {
             if (command.length !== 1) return;
 
