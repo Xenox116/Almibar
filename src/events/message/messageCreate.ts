@@ -45,7 +45,7 @@ export default new EventBuilder('messageCreate').setCallback(
         }
 
         if (command[0] === 'p') {
-            if (command.length !== 2) return;
+            if (command.length !< 2) return;
             return Commands.play(client, interaction, command, member);
         }
 

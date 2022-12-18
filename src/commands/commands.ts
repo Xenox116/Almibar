@@ -4,7 +4,13 @@ import type { GuildMember, GuildTextBasedChannel, Message, VoiceBasedChannel } f
 export class Commands {
     static play(client: ExtendedClient, interaction: Message, command: String[], member: GuildMember) {
         const channel: VoiceBasedChannel = member.voice.channel!;
-        client.distube.play(channel,String(command[1]),{
+
+        let query: String = "";
+
+        for (let i = 1; i < command.length; i++) {
+            query = query.concat(' '+String(command[i]!));
+        }
+        client.distube.play(channel, String(query), {
             member: member,
             textChannel: interaction.channel as GuildTextBasedChannel,
             message: interaction
@@ -18,7 +24,10 @@ export class Commands {
 
     static skip(client: ExtendedClient, interaction: Message) {
         const queue = client.distube.getQueue(interaction);
-        queue?.skip()
+        if(!queue?._next){
+            return interaction.reply('No hay mas canciones');
+        }
+        return queue?.skip();
     }
 
     static shuffle(client: ExtendedClient, interaction: Message) {
