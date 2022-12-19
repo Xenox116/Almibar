@@ -12,22 +12,24 @@ export default new EventBuilder('messageCreate').setCallback(
 
         if (interaction.author.bot || interaction.author.system) return;
         message = interaction.content;
-        console.log(message);
+        
         if (!message.startsWith('¡')) return;
+
+        console.log(message);
+
         command = message.substring(1).split(' ')!;
         member = interaction.member!;
 
         if (command[0] === 'test') {
             if (command.length !== 1) return;
 
-            const queue = client.distube.getQueue(interaction);
-            return console.log(queue);
+            return;
         }
 
         if (command[0] === 'ping') {
             if (command.length !== 1) return;
 
-            return console.log(client.ws.ping);
+            return interaction.reply(client.ws.ping+"");
         }
 
         if (command[0] === 'horario') {

@@ -2,8 +2,7 @@ const express = require('express')
 const server = express();
  
 server.all('/', (req: any, res: { send: (arg0: string) => void; }) => {
-    console.log(req);
-    
+    req;
     res.send('El bot sigue encendido.');
 });
  
