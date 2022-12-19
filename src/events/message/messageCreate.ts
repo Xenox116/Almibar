@@ -1,7 +1,7 @@
 import type { GuildMember, Message } from 'discord.js';
 import { EventBuilder } from 'structures';
 import type { ExtendedClient } from '../../structures/Client';
-import { Commands } from '../../commands/commands';
+import { Commands } from '../../util/commands';
 
 export default new EventBuilder('messageCreate').setCallback(
     async (client: ExtendedClient, interaction: Message) => {
