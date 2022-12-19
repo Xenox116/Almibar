@@ -1,5 +1,5 @@
 import { EventBuilder } from 'structures';
-import { pingHelper } from '../../util/ping';
+import { pingHelper } from '../../util/pingHelper';
 
 export default new EventBuilder('ready', true).setCallback(async client => {
 

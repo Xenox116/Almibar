@@ -1,5 +1,5 @@
 export function pingHelper() {
-    const keepAlive = require('./server');
+    const keepAlive = require('../server');
 	const Monitor = require('ping-monitor');
 
 	keepAlive();
