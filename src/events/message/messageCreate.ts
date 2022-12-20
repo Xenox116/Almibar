@@ -29,7 +29,7 @@ export default new EventBuilder('messageCreate').setCallback(
         if (command[0] === 'ping') {
             if (command.length !== 1) return;
 
-            return interaction.reply(client.ws.ping+"");
+            return interaction.reply('pong con '+client.ws.ping+'ms');
         }
 
         if (command[0] === 'horario') {
